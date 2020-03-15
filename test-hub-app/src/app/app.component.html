@@ -1,1 +1,10 @@
-<p>Hello!</p>
+<mat-toolbar role="heading" color="primary" class="app-header">
+  <span>TestHub</span>
+  <span class="example-fill-remaining-space"></span>
+    <span class="nav-tool-items">
+      <a mat-button routerLink="login" routerLinkActive="active">Sign in</a>
+      <a mat-button mat-raised-button routerLink="register" routerLinkActive="active">Sign up</a>
+    </span>
+  </mat-toolbar>
+  
+  <router-outlet></router-outlet>
