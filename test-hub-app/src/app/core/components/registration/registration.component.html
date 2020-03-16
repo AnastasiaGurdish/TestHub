@@ -6,7 +6,6 @@
     </mat-card-header>
 
     <form class="example-form">
-
       <mat-card-content>
         <mat-form-field class="example-full-width">
           <input matInput placeholder="Username">
@@ -20,10 +19,12 @@
           <input matInput placeholder="Password">
         </mat-form-field>
 
-        <mat-form-field class="example-full-width">
+        <mat-form-field>
           <mat-label>Choose a role...</mat-label>
-          <mat-select [(ngModel)]="selected">
-            <mat-option [value]="roles.id" *ngFor="let roles of Roles">{{roles.name}}</mat-option>
+          <mat-select>
+            <mat-option *ngFor="let roles of Roles" [value]="roles.id">
+              {{roles.name}}
+            </mat-option>
           </mat-select>
         </mat-form-field>
 
