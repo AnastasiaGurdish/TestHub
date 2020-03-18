@@ -9,15 +9,9 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { AngularMaterialModule } from './angular-material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
-import { RegistrationComponent } from './core/components/registration/registration.component';
-import { AuthenticationComponent } from './core/components/authentication/authentication.component';
-
 @NgModule({
   declarations: [
-    AppComponent,
-    RegistrationComponent,
-    AuthenticationComponent
+    AppComponent
   ],
   imports: [
     CoreModule,
