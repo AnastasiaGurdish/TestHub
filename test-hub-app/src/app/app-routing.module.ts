@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RegistrationComponent } from './core/components/registration/registration.component';
-import { AuthenticationComponent } from './core/components/authentication/authentication.component';
+import { AdminComponent } from './modules/admin/components/admin/admin.component';
 
+import { AuthenticationGuard } from './core/guards/authentication.guard';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'login' },
-  { path: 'login', component: AuthenticationComponent },
-  { path: 'register', component: RegistrationComponent }
+  { path: '', pathMatch: 'full', redirectTo: 'auth' },
+  { path: 'auth', loadChildren: './core/core.module#CoreModule' },
+   { path: 'profile', canActivate: [AuthenticationGuard], component: AdminComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+  exports: [RouterModule],
 })
 
 export class AppRoutingModule { }

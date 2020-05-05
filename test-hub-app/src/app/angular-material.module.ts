@@ -39,7 +39,7 @@ import {MatCardModule} from '@angular/material/card';
       MatChipsModule,
       MatTooltipModule,
       MatTableModule,
-      MatPaginatorModule
+      MatPaginatorModule,
    ],
    exports: [
       MatCardModule,
@@ -58,7 +58,7 @@ import {MatCardModule} from '@angular/material/card';
       MatChipsModule,
       MatTooltipModule,
       MatTableModule,
-      MatPaginatorModule
+      MatPaginatorModule,
    ],
    providers: [
       MatDatepickerModule,
