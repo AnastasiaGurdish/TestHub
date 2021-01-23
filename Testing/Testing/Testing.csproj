@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D92E8B05-7BAB-420E-A9A0-6C906AA69CDB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Testing</RootNamespace>
+    <AssemblyName>Testing</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.MediaPlayer">
+      <HintPath>..\..\..\Программирование\ВТОРОЙ КУРС\ООП\Второй проект\Игра\Игра\obj\Debug\Interop.MediaPlayer.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.WMPDXMLib">
+      <HintPath>..\..\..\Программирование\ВТОРОЙ КУРС\ООП\Второй проект\Игра\Игра\obj\Debug\Interop.WMPDXMLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.WMPLauncher">
+      <HintPath>..\..\..\Программирование\ВТОРОЙ КУРС\ООП\Второй проект\Игра\Игра\obj\Debug\Interop.WMPLauncher.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.WMPLib">
+      <HintPath>..\..\..\Программирование\ВТОРОЙ КУРС\ООП\Второй проект\Игра\Игра\obj\Debug\Interop.WMPLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArduousTest\ArduousTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArduousTest\ArduousTest.Designer.cs">
+      <DependentUpon>ArduousTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteClient.cs" />
+    <Compile Include="EasyTest\EasyTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EasyTest\EasyTest.Designer.cs">
+      <DependentUpon>EasyTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EasyTest\FillingEasyTest.cs" />
+    <Compile Include="EasyTest\FillingForm.cs" />
+    <Compile Include="ArduousTest\FillingArduousTest.cs" />
+    <Compile Include="ArduousTest\FillingForm2.cs" />
+    <Compile Include="MediumTest\FillingForm1.cs" />
+    <Compile Include="MediumTest\FillingMediumTest.cs" />
+    <Compile Include="MediumTest\MediumTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MediumTest\MediumTest.Designer.cs">
+      <DependentUpon>MediumTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResultOfTest.cs" />
+    <Compile Include="MainForms\Results.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\Results.Designer.cs">
+      <DependentUpon>Results.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateClient.cs" />
+    <Compile Include="UserControls\SettingsUsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SettingsUsControl.Designer.cs">
+      <DependentUpon>SettingsUsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AboutProgramUsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AboutProgramUsControl.Designer.cs">
+      <DependentUpon>AboutProgramUsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetData.cs" />
+    <Compile Include="PutTopic.cs" />
+    <Compile Include="UserControls\ResultsUsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ResultsUsControl.Designer.cs">
+      <DependentUpon>ResultsUsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\Sign_in.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\Sign_in.Designer.cs">
+      <DependentUpon>Sign_in.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MainForms\Sign_up.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\Sign_up.Designer.cs">
+      <DependentUpon>Sign_up.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\Testingcards.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\Testingcards.Designer.cs">
+      <DependentUpon>Testingcards.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PassTheTestUsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PassTheTestUsControl.Designer.cs">
+      <DependentUpon>PassTheTestUsControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ArduousTest\ArduousTest.resx">
+      <DependentUpon>ArduousTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EasyTest\EasyTest.resx">
+      <DependentUpon>EasyTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\Results.resx">
+      <DependentUpon>Results.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\Sign_in.resx">
+      <DependentUpon>Sign_in.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MediumTest\MediumTest.resx">
+      <DependentUpon>MediumTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainForms\Sign_up.resx">
+      <DependentUpon>Sign_up.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\Testingcards.resx">
+      <DependentUpon>Testingcards.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ResultsUsControl.resx">
+      <DependentUpon>ResultsUsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SettingsUsControl.resx">
+      <DependentUpon>SettingsUsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AboutProgramUsControl.resx">
+      <DependentUpon>AboutProgramUsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PassTheTestUsControl.resx">
+      <DependentUpon>PassTheTestUsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
