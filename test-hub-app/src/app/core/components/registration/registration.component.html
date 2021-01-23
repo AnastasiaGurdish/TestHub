@@ -1,76 +1,54 @@
-<mat-toolbar role="heading" color="primary" class="app-header">
-  <span>TestHub</span>
-  <span class="header-holder"></span>
-    <span class="nav-tool-items">
-      <a mat-button routerLink="/signin" routerLinkActive="active">Sign in</a>
-      <a mat-button mat-raised-button routerLink="/signup" routerLinkActive="active">Sign up</a>
-    </span>
-</mat-toolbar>
-
 <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
-  <mat-card class="box">
-    <mat-card-header>
-      <mat-card-title>Sign Up</mat-card-title>
-    </mat-card-header>
+  <div class="box">
+    <p-header class="form-header">Sign up</p-header>
+    <form [formGroup]="registerForm" class="auth-form"> 
 
-    <form [formGroup]="registerForm" class="example-form">
-      <!-- User Name -->
-      <mat-card-content>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Username" formControlName="username">
-          <mat-error *ngIf="registerForm.controls.username.invalid">
-            {{this.validator.getUsernameErrorMessage(this.registerForm.controls['username'])}}
-          </mat-error>
-        </mat-form-field>
+      <div class="p-field">
+        <div class="p-float-label">
+          <input id="userNameInput" class="input-customization" type="username" #username formControlName="username" pInputText> 
+          <label for="userNameInput" class="label-input">Username</label>
+        </div>
+        <small *ngIf="registerForm.controls.username.invalid" class="p-invalid alert alert-danger title-message">{{this.validator.getUsernameErrorMessage(this.registerForm.controls['username'])}}</small>
+      </div>
 
-        <!-- Email -->
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Email" formControlName="email">
-          <mat-error *ngIf="registerForm.controls.email.invalid">
-            {{this.validator.getEmailErrorMessage(this.registerForm.controls['email'])}}
-          </mat-error>
-        </mat-form-field>
 
-        <!-- Password -->
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password">
-          <div matSuffix class="hightlight">
-            <mat-icon (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      <div class="p-field">
+        <div class="p-float-label">
+          <input id="emailInput" class="input-customization" type="email" formControlName="email" pInputText> 
+          <label for="emailInput" class="label-input">Email</label>
+        </div>
+        <small *ngIf="registerForm.controls.email.invalid" class="p-invalid alert alert-danger title-message">{{this.validator.getEmailErrorMessage(this.registerForm.controls['email'])}}</small>
+      </div>
+
+      <div class="p-field">
+        <div class="p-inputgroup">
+          <div class="p-float-label">
+            <input id="passwordInput" type="password" formControlName="password" [type]="hide ? 'password' : 'text'" pInputText> 
+            <label for="passwordInput">Password</label>
           </div>
-          <mat-error *ngIf="registerForm.controls.password.invalid">
-            {{this.validator.getPasswordErrorMessage(this.registerForm.controls['password'])}}
-          </mat-error>
-        </mat-form-field>
+          <button type="button" pButton icon="pi pi-eye" styleClass="p-button-warn" (click)="hide = !hide"></button> 
+        </div>
+        <small *ngIf="registerForm.controls.password.invalid" class="p-invalid title-message">{{this.validator.getPasswordErrorMessage(this.registerForm.controls['password'])}}</small>
+      </div>
 
-        <!-- Confirm Password -->
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Confirm password" [type]="hide ? 'password' : 'text'" formControlName="passwordConfirm">
-          <div matSuffix class="hightlight">
-            <mat-icon (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      <div class="p-field">
+        <div class="p-inputgroup">
+          <div class="p-float-label">
+            <input id="passwordInput" type="password" formControlName="passwordConfirm" [type]="hide ? 'password' : 'text'" pInputText> 
+            <label for="passwordInput">Cofirm password</label>
           </div>
-          <mat-error *ngIf="registerForm.controls.passwordConfirm.invalid">
-            {{this.validator.getConfirmPasswordErrorMessage(this.registerForm.controls['passwordConfirm'])}}
-          </mat-error>
-        </mat-form-field>
+          <button type="button" pButton icon="pi pi-eye" styleClass="p-button-warn" (click)="hide = !hide"></button> 
+        </div>
+        <small *ngIf="registerForm.controls.passwordConfirm.invalid" class="p-invalid title-message">{{this.validator.getConfirmPasswordErrorMessage(this.registerForm.controls['passwordConfirm'])}}</small>
+      </div>
 
-        <!-- Choose role -->
-        <mat-form-field>
-          <mat-label>Choose a role...</mat-label>
-            <mat-select formControlName="roleSelect">
-            <mat-option *ngFor="let roles of Roles" [value]="roles.id">
-              {{roles.name}}
-            </mat-option>
-          </mat-select>
-          <mat-error *ngIf="registerForm.controls.roleSelect.invalid">
-            {{this.validator.getRoleSelectErrorMessage(this.registerForm.controls['roleSelect'])}}
-          </mat-error>
-        </mat-form-field>
+      <div class="p-field">
+        <p-dropdown [options]="Roles" placeholder="Choose a role" optionLabel="name" [showClear]="true" [style]="{'width':'100%'}"></p-dropdown>
+        <small *ngIf="registerForm.controls.roleSelect.invalid" class="p-invalid title-message">{{this.validator.getRoleSelectErrorMessage(this.registerForm.controls['roleSelect'])}}</small>
+      </div>
 
-      </mat-card-content>
-
-      <button mat-stroked-button color="accent" class="btn-block" (click)="register()">Sign Up</button>
+      <button pButton type="button" label="Sign Up" class="p-button-outlined p-d-block p-mx-auto button-customization" (click)="register()"></button>      
+      <button pButton type="button" label="Already have an account? Sign in!" class="p-button-link p-d-block p-mx-auto link-button-customization" routerLink="/signin" routerLinkActive="active"></button>    
     </form>
-  </mat-card>
-
-
+  </div>
 </div>

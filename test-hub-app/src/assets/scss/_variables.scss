@@ -1,0 +1,113 @@
+$font-family-sans-serif: "Poppins", sans-serif !default;
+$font-size-base: 1rem;
+$font-weight-base: 300 !default;
+
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-bold: 800 !default;
+
+$font-italic: italic;
+$font-normal: normal;
+
+$h1-font-size: 80px !default;
+$h2-font-size: 60px !default;
+$h3-font-size: 48px !default;
+$h4-font-size: 38px !default;
+$h5-font-size: 30px !default;
+$h6-font-size: 22px !default;
+
+$font-size-button: 16px !default;
+$font-size-body: 14px !default;
+$font-size-link-button: 12px !default;
+$font-size-small: 10px !default;
+$font-size-logo: 20px !default;
+$font-size-menu: 14px !default;
+
+$main-body-bg: #fff !default;
+$primary-header: #3F51B5;
+$primary-header-hover: #303F9F;
+$primary-background: #FFFFFF;
+$primary-text: #212121;
+$primary-button: #FDD835;
+$primary-button-hover: #FFC107;
+$primary-switches: #F44336;
+$primary-list: #33CCCC;
+$primary-list-hover: #29B4B4;
+$primary-input: #673AB7;
+$form-background: rgba(255, 255, 255, .6);
+
+$secondary-button: #FF4081;
+$secondary-button-hover: #FF4081;
+$secondary-text-icons: #FFFFFF;
+$secondary-text: #757575;
+$disabled: #BDBDBD;
+$error: #F44336;
+$success: #25b56b;
+
+$shadow: 0px 2px 1px rgba(0, 0, 0, 0.02), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
+$button-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
+$button-hover-background: rgba(203, 44, 98, 0.12);
+
+$card-border-width: 0px !default;
+$card-border-color: transparent !default;
+$card-border-radius: 4px !default;
+
+$form-border-width: 0px !default;
+$form-border-color: transparent !default;
+$form-border-radius: 10px !default;
+
+$button-border-width: 0px !default;
+$button-border-color: transparent !default;
+$button-border-radius: 4px !default;
+
+$lft: left;
+$rgt: right;
+$cntr: center;
+
+$enable-caret: true !default;
+$enable-rounded: true !default;
+$enable-shadows: false !default;
+$enable-gradients: false !default;
+$enable-transitions: true !default;
+$enable-hover-media-query: false !default;
+$enable-grid-classes: true !default;
+$enable-print-styles: true !default;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1600px,
+) !default;
+
+$default-padding: 0 !default;
+$default-margin: 0 !default;
+
+$padding-button-left: 1em !default;
+$padding-button-right: 1em !default;
+$padding-button-top: 0.6em !default;
+$padding-button-bottom: 0.6em !default;
+
+$padding-card-left: 3em !default;
+$padding-card-right: 4em !default;
+$padding-card-top: 2.2em !default;
+$padding-card-bottom: 2.2em !default;
+
+$padding-left: 1em !default;
+$padding-right: 1em !default;
+$padding-top: 1em !default;
+$padding-bottom: 1em !default;
+
+$default-margin-grid: 1.6em !default;
+$default-gutter: 1.3em !default;
+
+$header-max-height: 4.3em !default;
+$button-max-height: 2.4em !default;
+$button-max-width: 19em !default;
+$card-max-height: 26.7em !default;
+$card-max-width: 28.2em !default;
+$input-max-height: 2.4em !default;
+$input-max-width: 16em !default;
+$menu-item-max-height: 2.6em !default;

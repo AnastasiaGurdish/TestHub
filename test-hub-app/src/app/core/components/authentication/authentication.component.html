@@ -1,42 +1,31 @@
-<mat-toolbar role="heading" color="primary" class="app-header">
-  <span>TestHub</span>
-  <span class="header-holder"></span>
-    <span class="nav-tool-items">
-      <a mat-button routerLink="/signin" routerLinkActive="active">Sign in</a>
-      <a mat-button mat-raised-button routerLink="/signup" routerLinkActive="active">Sign up</a>
-    </span>
-</mat-toolbar>
-
 <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
-  <mat-card class="box" >
-    <mat-card-header>
-      <mat-card-title>Sign in</mat-card-title>
-    </mat-card-header>
+  <div class="box">
+    <p-header class="form-header">Sign in</p-header>
+    <form [formGroup]="authForm" class="auth-form"> 
 
-    <form [formGroup]="authForm" class="example-form"> 
-      <mat-card-content>
-<!-- User Name -->
-        <mat-form-field class="example-full-widt">
-          <input matInput #username formControlName="username" placeholder="Username" >
-          <mat-error *ngIf="authForm.controls.username.invalid">
-            {{this.validator.getUsernameErrorMessage(this.authForm.controls['username'])}}
-        </mat-error>
-        </mat-form-field>
+      <div class="p-field">
+        <div class="p-float-label">
+          <input id="userNameInput" class="input-customization" type="username" #username formControlName="username" pInputText> 
+          <label for="userNameInput" class="label-input">Username</label>
+        </div>
+        <small *ngIf="authForm.controls.username.invalid" class="p-invalid alert alert-danger title-message">{{this.validator.getUsernameErrorMessage(this.authForm.controls['username'])}}</small>
+      </div>
 
-<!-- Password -->
-        <mat-form-field class="example-full-width">
-          <input matInput #password formControlName="password" [type]="hide ? 'password' : 'text'" placeholder="Password" >
-          <div matSuffix class="hightlight">
-            <mat-icon (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      <div class="p-field">
+        <div class="p-inputgroup">
+          <div class="p-float-label">
+            <input id="passwordInput" type="password" #password formControlName="password" [type]="hide ? 'password' : 'text'" pInputText> 
+            <label for="passwordInput">Password</label>
           </div>
-          <mat-error *ngIf="authForm.controls.password.invalid">
-            {{this.validator.getPasswordErrorMessage(this.authForm.controls['password'])}}
-        </mat-error>
-        </mat-form-field>
-        
-      </mat-card-content>
-      <button mat-stroked-button color="accent" class="btn-block" (click)="signIn()">Sign in</button>
-    </form>
-  </mat-card>
+          <button type="button" pButton icon="pi pi-eye" styleClass="p-button-warn" (click)="hide = !hide"></button> 
+        </div>
+        <small *ngIf="authForm.controls.password.invalid" class="p-invalid title-message">{{this.validator.getPasswordErrorMessage(this.authForm.controls['password'])}}</small>
+      </div>
 
+      <button pButton type="button" label="Forgot password?" class="p-button-link link-button-customization forgot-password"></button>
+
+      <button pButton type="button" label="Sign In" class="p-button-outlined p-d-block p-mx-auto button-customization" (click)="signIn()"></button>      
+      <button pButton type="button" label="Don`t have an account? Sign up now!" class="p-button-link p-d-block p-mx-auto link-button-customization" routerLink="/signup" routerLinkActive="active"></button>    
+    </form>
+  </div>
 </div>

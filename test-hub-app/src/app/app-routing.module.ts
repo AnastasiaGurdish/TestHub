@@ -7,7 +7,7 @@ import { AuthenticationGuard } from './core/guards/authentication.guard';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'auth' },
   { path: 'auth', loadChildren: './core/core.module#CoreModule' },
-   { path: 'profile', canActivate: [AuthenticationGuard], component: AdminComponent },
+  { path: 'profile', canActivate: [AuthenticationGuard], component: AdminComponent },
 ];
 
 @NgModule({

@@ -1,0 +1,100 @@
+@import '../../../../assets/scss/variables';
+
+.login-wrapper {
+    height:100%;
+    background-image: url('../../../../assets/img/Material-Backgrounds-27-2560-x-1442.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .box {
+        position: relative;
+        padding: $padding-card-top $padding-card-left;
+        max-width: $card-max-width;
+        opacity: 1;
+        font-family: $font-family-sans-serif;
+        background: $primary-background;
+        border-radius: $form-border-radius;
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        z-index: 5;
+
+        .form-header {
+            display:block;
+            font-family: $font-family-sans-serif;
+            font-size: $h6-font-size;
+            font-weight: $font-weight-normal;
+            text-align: $cntr;
+            padding-bottom: $padding-bottom;
+        }
+
+        .auth-form {
+            
+            .title-message {
+                font-family: $font-family-sans-serif;
+                font-size: $font-size-small;
+                color: $error;
+            }
+
+            .input-customization {
+                width: 100%;
+                max-width: $input-max-width;
+                font-family: $font-family-sans-serif;
+            }
+
+            .button-customization {
+                max-width: $button-max-width;
+                width: 100%;
+                color: $secondary-button;
+                font-family: $font-family-sans-serif;
+                font-size: $font-size-button;
+                font-weight: $font-weight-normal;
+            }
+
+            .button-customization:hover {
+                background: $button-hover-background;
+            }
+
+            .button-customization:focus {
+                background: $button-hover-background;
+            }
+
+            .link-button-customization {
+                color: $primary-header;
+                font-family: $font-family-sans-serif;
+                font-size: $font-size-link-button;
+            }
+
+            .forgot-password {
+                padding-right: 0;
+                padding-left: 12em;
+                padding-top: 0;
+                padding-bottom: 1.3em;
+            }
+        }
+    }
+    
+    .box.back {
+        transform: scale(.95);
+        -webkit-transform: scale(.95);
+        -ms-transform: scale(.95);
+        top: -1.25em;
+        opacity: .8;
+        z-index: -1;
+    }
+    
+    .box:before {
+        position: absolute;
+        content:"";
+        left:0;
+        top:-10px;
+        width:100%;
+        height:30px;
+        border-radius: $form-border-radius;
+        background: $form-background;
+        transform:scale(.95);
+        -webkit-transform:scale(.95);
+        -ms-transform:scale(.95);
+        z-index:-1;
+    }
+}

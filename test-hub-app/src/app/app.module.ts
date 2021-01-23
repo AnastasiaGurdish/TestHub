@@ -6,8 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { AngularMaterialModule } from './angular-material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { PrimeNgModule } from './primeng.module';
+
 
 @NgModule({
   declarations: [
@@ -19,9 +21,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    AngularMaterialModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    PrimeNgModule
   ],
   providers: [],
   bootstrap: [AppComponent],

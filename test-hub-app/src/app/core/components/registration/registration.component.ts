@@ -3,13 +3,12 @@ import { Router } from '@angular/router';
 import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
 import { AuthenticationService } from '../../services/authentication.service';
 import { ValidationService } from '../../services/validation.service';
-import { PopupService } from '../../services/popup.service';
 import { User } from '../../../shared/models/user.model';
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css']
+  styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit, AfterViewInit { 
  registerForm: FormGroup;
@@ -33,7 +32,6 @@ export class RegistrationComponent implements OnInit, AfterViewInit {
 
   constructor (
     public validator: ValidationService, 
-    private popupService: PopupService, 
     private authService: AuthenticationService, 
     private router: Router,
     private formBuilder: FormBuilder) { }
@@ -66,23 +64,23 @@ export class RegistrationComponent implements OnInit, AfterViewInit {
     }
 
     if (username.invalid) {
-      this.popupService.showError(this.validator.getUsernameErrorMessage(username));
+      // this.popupService.showError(this.validator.getUsernameErrorMessage(username));
       return;
     }
     if (email.invalid) {
-      this.popupService.showError(this.validator.getEmailErrorMessage(email));
+      // this.popupService.showError(this.validator.getEmailErrorMessage(email));
       return;
     }
     if (password.invalid) {
-      this.popupService.showError(this.validator.getPasswordErrorMessage(password));
+      // this.popupService.showError(this.validator.getPasswordErrorMessage(password));
       return;
     }
     if (passwordConfirm.invalid) {
-      this.popupService.showError(this.validator.getConfirmPasswordErrorMessage(passwordConfirm));
+      // this.popupService.showError(this.validator.getConfirmPasswordErrorMessage(passwordConfirm));
       return;
     }
     if(roleSelect.invalid) {
-      this.popupService.showError(this.validator.getRoleSelectErrorMessage(username));
+      // this.popupService.showError(this.validator.getRoleSelectErrorMessage(username));
       return;
     }
     if(this.registerForm.valid){
@@ -101,12 +99,12 @@ export class RegistrationComponent implements OnInit, AfterViewInit {
 
   private registerSuccess(isRegistrationSuccessful: boolean | undefined): void {
     if (isRegistrationSuccessful === true) {
-      this.popupService.showMessage(this.successMessage);
+      // this.popupService.showMessage(this.successMessage);
     }
   }
 
   private registerFailure(isRegistrationUnSuccessful: boolean | undefined): void {
-    if (isRegistrationUnSuccessful === false)
-      this.popupService.showMessage(this.error);
+    if (isRegistrationUnSuccessful === false) {}
+      // this.popupService.showMessage(this.error);
   }
 }

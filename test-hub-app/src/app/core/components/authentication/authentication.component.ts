@@ -1,24 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from '../../services/authentication.service';
 import { ValidationService } from '../../services/validation.service';
-import { PopupService } from '../../services/popup.service';
 import { User } from '../../../shared/models/user.model';
 
 @Component({
   selector: 'app-authentication',
   templateUrl: './authentication.component.html',
-  styleUrls: ['./authentication.component.css']
+  styleUrls: ['./authentication.component.scss']
 })
+
+
 export class AuthenticationComponent implements OnInit {
   authForm: FormGroup;
   isSubmitted  =  false;
   public hide = true;
-  private successMessage = "Success!";
-  private error = "Authentication is failed! Check your form!";
+  // private successMessage = "Success!";
+  // private error = "Authentication is failed! Check your form!";
 
-  constructor(public validator: ValidationService, private popupService: PopupService, private authService: AuthenticationService, private router: Router, private formBuilder: FormBuilder) { }
+  constructor(public validator: ValidationService, private authService: AuthenticationService, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.authForm  =  this.formBuilder.group({
@@ -38,11 +39,11 @@ export class AuthenticationComponent implements OnInit {
       return;
     }
     if (username.invalid) {
-      this.popupService.showError(this.validator.getUsernameErrorMessage(username));
+      // this.popupService.showError(this.validator.getUsernameErrorMessage(username));
       return;
     }
     if (password.invalid) {
-      this.popupService.showError(this.validator.getPasswordErrorMessage(password));
+      // this.popupService.showError(this.validator.getPasswordErrorMessage(password));
       return;
     }
     if(this.authForm.valid){
@@ -60,13 +61,13 @@ export class AuthenticationComponent implements OnInit {
 
   private AuthSuccess(isRegistrationSuccessful: boolean | undefined): void {
     if (isRegistrationSuccessful === true) {
-      this.popupService.showMessage(this.successMessage);
+      // this.popupService.showMessage(this.successMessage);
     }
   }
 
   private AuthFailure(isRegistrationUnSuccessful: boolean | undefined): void {
-    if (isRegistrationUnSuccessful === false)
-      this.popupService.showMessage(this.error);
+    if (isRegistrationUnSuccessful === false){}
+      // this.popupService.showMessage(this.error);
   }
 
 }
